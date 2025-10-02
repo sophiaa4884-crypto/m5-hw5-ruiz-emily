@@ -127,16 +127,11 @@ textarea:focus {
   margin-right: 10px;
 }
 
-/* === Accessibility & Contrast Overrides (append to end of file) === */
+body { color: #111; }
 
-/* Body text: ensure strong contrast on white */
-body { color: #111; } /* was #999 (too light on white) */
-
-/* Links (general) */
 a { color: #0b3a59; }
 a:hover { text-decoration: underline; }
 
-/* Keyboard focus visibility across the site */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -145,53 +140,47 @@ textarea:focus-visible {
   outline-offset: 2px;
 }
 
-/* Skip link style (works with the skip link in index.html) */
 .skip-link {
   position: absolute; left: -999px; top: auto;
   background: #fff; border: 2px solid #111; padding: .5rem 1rem;
 }
 .skip-link:focus { left: 16px; top: 16px; z-index: 1000; }
 
-/* Nav: light text on dark background for AA contrast */
 .nav a {
-  color: #f0f0f0;           /* was #555 (failed on #333) */
+  color: #f0f0f0;
   font-weight: bold;
 }
 .nav a:hover,
 .nav a:focus-visible { text-decoration: underline; }
 
-/* Hero: keep your image, add a subtle dark gradient for readability */
 .hero {
   background: 
     linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
     url("./mountains.jpg") center / cover no-repeat !important;
-  color: #fff;               /* was lightpink (could fail on photos) */
-  text-shadow: 0 2px 4px rgba(0,0,0,.5); /* extra legibility on busy areas */
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.5);
 }
 
-/* Headings: your section titles are now <h2>; match previous size */
-.content h2 {                /* replaces previous .content h3 look */
+.content h2 {
   font-size: 28px;
   margin-bottom: 10px;
 }
-.form-section h2 {           /* replaces previous .form-section h3 look */
+.form-section h2 { 
   text-align: center;
   font-size: 28px;
   margin-bottom: 40px;
 }
 
-/* Inputs: slightly darker borders & placeholder for readability */
 input, textarea {
-  border: 1px solid #bbb;    /* a bit darker than #ccc */
+  border: 1px solid #bbb;
   color: #111;
   background: #fff;
 }
 input::placeholder,
 textarea::placeholder { color: #767676; }
 
-/* Button: darker blue for AA contrast on white */
 .submit-btn {
-  background-color: #0b3a59; /* passes AA with white text */
+  background-color: #0b3a59;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -199,5 +188,4 @@ textarea::placeholder { color: #767676; }
 .submit-btn:hover,
 .submit-btn:focus-visible { filter: brightness(1.1); }
 
-/* Footer: light text on dark background for AA */
-.footer { color: #f0f0f0; }  /* was #555 on #333 */
+.footer { color: #f0f0f0; }
